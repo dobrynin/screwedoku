@@ -26,7 +26,7 @@ class Board
     grid[x][y]
   end
 
-  def []=(pos, value)
+  def []=(value, pos)
     x, y = pos
     tile = grid[x][y]
     tile.value = value
@@ -55,7 +55,6 @@ class Board
     rows.all? { |row| solved_set?(row) } &&
       columns.all? { |col| solved_set?(col) } &&
       squares.all? { |square| solved_set?(square) }
-    end
   end
 
   def solved_set?(tiles)
